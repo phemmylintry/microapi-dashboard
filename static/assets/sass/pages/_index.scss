@@ -1,0 +1,285 @@
+#home {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ 
+ $tablet: 700px;
+ @mixin tablet {
+     @media (max-width: #{$tablet}) {
+         @content;
+     }
+   }
+ 
+ .dashboard {
+   &__container{
+     
+     &__img {
+       height: 30em;
+ 
+       @include tablet{
+         height: 10em;
+     }
+     
+     }
+   }
+ }
+ 
+ .item-one {
+    &__header{
+      
+     @include tablet{
+       font-size: 1.5em !important;
+     }
+    }
+ 
+    &__text{
+     @include tablet{
+       font-size: 0.7em;
+     }
+    }
+ }
+
+ .item-three h5{
+  font-size:30px;
+ }
+ 
+ .item-four {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+ 
+   &__content {
+     padding:0em 2em;
+     border-right: 0.01em solid lighten($color: $primary-color, $amount: 70);
+   h6{
+     font-size:20px;
+
+   }
+   
+    }
+ 
+   &__header {
+     overflow: hidden;
+   }
+ 
+   &__description {
+     color: darken($color: $tetiary-color, $amount: 40);
+   }
+ }
+ 
+.item-five {
+  margin-top: 4em;
+ //  padding: 0 8em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: $tetiary-color;
+.row{
+ width:100%;
+ margin:2em auto 0em auto;
+ // text-align: justify;
+ .heading{
+   width: 65%;
+   margin: auto;
+   text-align: left;
+   @include tablet{
+    width: 90%;
+  }
+ }
+}
+  &__container {
+    display: flex;
+    justify-content: center;
+    &__img {
+      height: 25em;
+    }
+  }
+  @include tablet{
+    padding: 0;
+  }
+}
+ 
+ .item-six {
+   margin:auto;
+   width:40%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+ 
+   &__icon {
+     padding:0em 0.5em;
+     font-size:70px;
+     color: darken($color: $secondary-color, $amount: 50);
+   }
+ }
+ 
+ .item-seven {
+   margin-top: 4em;
+  //  padding: 0 8em;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   background-color: $tetiary-color;
+ .row{
+  width:100%;
+  margin:2em auto 0em auto;
+  // text-align: justify;
+  .heading{
+    width: 65%;
+    margin: auto;
+    text-align: left;
+    @include tablet{
+     width: 90%;
+   }
+  }
+ }
+   &__container {
+     display: flex;
+     justify-content: center;
+   }
+ 
+   &__img {
+     height: 25em;
+   }
+ 
+   @include tablet{
+     padding: 0;
+   }
+ 
+  
+ }
+ .item-eight {
+   background-color: $tetiary-color;
+   .row{
+     width:60%;
+     margin:auto;
+     @include tablet{
+      width:100%;
+    }
+   }
+ p{
+   font-size:18px;
+ }
+   &--nine {
+     background-color: $secondary-color;
+   }
+ }
+ 
+ .item-nine {
+  padding:0em 14em;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: end;
+   align-items: center;
+   background-color: $tetiary-color;
+   @include tablet{
+    padding: 0 0.5em;
+  }
+
+  .item-one__header{
+    font-size:28px !important;
+
+  }
+   .item-one__text{
+    margin-bottom:3em !important;
+
+  }
+   &__content {
+    //  padding-left: 13em;
+ 
+     @include tablet{
+      //  padding-left: 10%;
+     }
+ 
+   }
+ 
+   &__item {
+     background-color: $secondary-color;
+     padding :2em;
+     padding-bottom: 3em;
+   
+ 
+     &__link {
+       color: $primary-color;
+       background-color: $tetiary-color;
+       margin:2em 0em;
+       padding: 0.8em;
+ 
+       &__link:hover{
+             text-decoration: none;
+       }
+     }
+   }
+ 
+   &__button {
+       color: $secondary-color;
+       background-color: $primary-color;
+       font-size: 1.3em;
+       padding: 1.5em;
+       text-align: center;
+ 
+       @include tablet{
+         font-size: 0.8em;
+       }
+   }
+ }
+ 
+ .item-ten {
+ 
+   &__text {
+     text-transform: uppercase;
+     color:rgb(172, 169, 169); ;
+ 
+     @include tablet{
+       font-size: 0.7em;
+     }
+   }
+  //  .__image-container{
+  //    display:flex;
+  //    .__image-container__img{
+  //     display:flex
+  //   }
+  //  }
+   &__image-container{
+      
+       display: flex;
+       justify-content: center;
+       &__img {
+         height: 6em;
+        padding:0em 1.5em;
+       }
+       @include tablet{
+         width:50%;
+         margin:auto;
+        display:block;
+         
+       }
+   }
+ 
+   &__other {
+     background-color: $secondary-color;
+   }
+ }
+
+ 
+ .item-eleven{
+   input{
+    padding: 0.5em 2.5em;
+    border:0.5px solid gray;
+    outline:none;
+   }
+  .started_btn{
+padding: 0.6em 2.5em;
+background-color: $primary-color;
+text-decoration: none;
+border:none;
+outline:none;
+color:#fff;
+
+@include tablet{
+ margin-top:0.5em;
+  }
+ }
+ 
+}

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <title>Blog</title>
+</head>
+
+<body id="layout">
+
+    <header>
+        <!-- Write header here -->
+        <div class="container">
+            <div class="row pt-4 pb-4 header__wrapper">
+                <div class="col-lg-2 col-md-6 col-sm-6 logo__container">
+                    <a href="index.html"class="logo"><img src="./assets/img/logo.svg" alt="site logo"></a>
+                </div>
+
+                <nav class="col-lg-6">
+                    <ul class="nav__menu">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About us</a></li>
+                      <li><a href="contact.html">Contact us</a></li>
+                      <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                  </nav>
+
+                  <div class="col-lg-4 menu__button__container">
+                    <a href="signin1.html"><button class="secondary-btn">Sign In</button></a>
+                    <a href="signup-1.html"><button class="primary-btn">Sign Up</button></a>
+                  </div>
+
+                <div class="mobile__nav">
+                    <div class="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+                    <div class="mobile__menu">
+                        <nav class="nav">
+                            <div class="search__form">
+                                <label for="search">
+                                    <input type="text" name="search" placeholder="Search...">
+                                </label>
+                                <div class="search__icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
+
+                            <ul class="mobile__nav__menu">
+                                <li><a href="index.html"><b>Home</b></a></li>
+                                <li><a href="about.html"><b>About us</b></a></li>
+                                <li><a href="contact.html"><b>Contact us</b></a></li>
+                                <li><a href="docs.html"><b>Documentation</b></a></li>
+                                <li><a href="signin1.html"><b>Sign in</b></a></li>
+                                <li><a href="signup-1.html"><b>Sign Up</b></a></li>
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                            </ul>
+
+                            <div class="menu__logo">
+                                <a href="#"><img src="./assets/img/logo.svg" alt=""></a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Section starts -->
+
+        <main>
+            <div class="container">
+                <div class="row blog__heading offset-lg-1">
+                    
+
+                    <div class="col-lg-7 col-md-6 col-sm-12">
+                        <h1>
+                            Blog
+                        </h1>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 form-group search_div">
+                        <i class="search_icon">
+                            <svg width="22" height="19" viewBox="0 0 22 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.5066 2.16692C11.3769 -0.722306 6.28308 -0.722306 3.15339 2.16692C0.0243895 5.05677 0.0243895 9.75856 3.15339 12.6484C5.94046 15.2207 10.2812 15.4963 13.4088 13.4877C13.4746 13.7752 13.6252 14.0495 13.8675 14.2731L18.4253 18.4807C19.0895 19.0926 20.1628 19.0926 20.8236 18.4807C21.4871 17.8682 21.4871 16.8773 20.8236 16.2667L16.2658 12.0578C16.0249 11.8361 15.7271 11.6964 15.4157 11.6357C17.5928 8.74768 17.2943 4.7411 14.5066 2.16692ZM13.0676 11.32C10.731 13.477 6.92828 13.477 4.59238 11.32C2.25716 9.16293 2.25716 5.65302 4.59238 3.49597C6.92828 1.33955 10.731 1.33955 13.0676 3.49597C15.4041 5.65302 15.4041 9.16293 13.0676 11.32Z"
+                                    fill="black" />
+                            </svg>
+
+                        </i>
+                        
+                        <input type="text" class="blog_search_input" placeholder="Search Blog">
+                    </div>
+    
+                </div>
+                
+                <!-- Divider -->
+                <div class="row container offset-lg-1">
+                    
+                    <div class="col-lg-10 col-md-12 col-sm-10 blog_divider"></div>
+                </div>
+                <!-- Divider -->
+
+
+                <!-- main contents -->
+
+
+                <div class="blogs">
+
+                    <!-- first Row -->
+
+                    <div class="row  mb-5">
+                        <div class="col-lg-2 col-sm-8"></div>
+                        <div class="col-lg-5 col-md-12 col-sm-10 blog1-left mb-3">
+                           <div class="card">
+                               <div class="image-div">
+                                   <img src="assets/img/API_bg.jpg" class="card-img-top" alt="...">
+
+                               </div>
+                               <div class="card-body c-body">
+                                   <h5 class="blog1_left_title">
+                                       API (Application Programming Interface) Blogs.
+                                   </h5>
+                                   <p class="blog1_left_text">
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                       incididunt ut labore et dolore magna al
+                                   </p>
+                               </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-10 blog1-right mb-3 d-lg-block d-md-block d-sm-none">
+                            <div class="row">
+                                <div class="col-lg-9 col-md-6 col-sm-10 mb-4">
+                                     <div class="card">
+                                         <div class="image-div">
+                                             <img src="assets/img/impact.jpg" class="card-img-top" alt="...">
+                                         </div>
+                                         <div class="card-body c-body">
+                                             <h5 class="blog1_right_title">
+                                                 Impact Of Extrinsic Motivation On Intrinsic
+                                             </h5>
+                                         </div>
+                                     </div>
+                                </div>
+                                <div class="col-lg-9 col-md-6 col-sm-10 mb-3">
+                                     <div class="card">
+                                         <div class="image-div">
+                                             <img src="assets/img/connect.jpg" class="card-img-top" alt="...">
+                                         </div>
+                                         <div class="card-body c-body">
+                                             <h5 class="blog1_right_title">
+                                                 Connecting artificial intelligence with APIs
+                                                 </h5>
+                                         </div>
+                                     </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Second Row -->
+
+                    <div class="row mb-5">
+
+                        <div class="col-lg-2 col-md-2 col-sm-8"></div>
+                        
+                        <div class="col-lg-10">
+                             <div class="row no-wrap">
+                                 <div class="col">
+
+                                     <div class="card no-border special-card">
+                                         <div class="card-body">
+                                             <p class="others_recom">
+                                                 RECOMMENDED.
+                                             </p>
+                                             <h5 class="others_title">
+                                                 What is REST API? Uses, Advantages and Edges.
+                                             </h5>
+                                             <p class="others_text">
+                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                                 eiusmod
+                                                 tempor
+                                                 incididunt ut labore et dolore magna.
+                                             </p>
+                                             <p class="others_name">
+                                                 Julia Orji
+                                             </p>
+
+                                             <p class="others_time">
+                                                 July 21, 2020 . 5 min read
+                                             </p>
+                                         </div>
+                                        </div>
+                                             <div class="others_img">
+                                                 <img src="assets/img/network.jpg" class="card-img-top" alt="...">
+    
+                                             </div>
+
+                                 </div>
+                                 <!-- <div class="col-lg-2 col-md-2 col-sm-1">
+                                 </div> -->
+
+                             </div>
+                        </div>
+                       
+                        
+                    </div>
+
+                    <!-- Third Row -->
+
+                    <div class="row mb-5">
+
+                        <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+                        <div class="col-lg-10">
+                            <div class="row no-wrap">
+                                <div class="col">
+
+                                    <div class="card no-border special-card">
+                                        <div class="card-body">
+                                            <p class="others_recom">
+                                                RECOMMENDED.
+                                            </p>
+                                            <h5 class="others_title">
+                                                What is REST API? Uses, Advantages and Edges.
+                                            </h5>
+                                            <p class="others_text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                                eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna.
+                                            </p>
+                                            <p class="others_name">
+                                                Julia Orji
+                                            </p>
+
+                                            <p class="others_time">
+                                                July 21, 2020 . 5 min read
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="others_img">
+                                        <img src="assets/img/authkey.jpg" class="card-img-top" alt="...">
+
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-lg-2 col-md-2 col-sm-1">
+                                 </div> -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Forth Row -->
+
+                    <div class="row mb-5">
+
+                        <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+                        <div class="col-lg-10">
+                            <div class="row no-wrap">
+                                <div class="col">
+
+                                    <div class="card no-border special-card">
+                                        <div class="card-body">
+                                            <p class="others_recom">
+                                                RECOMMENDED.
+                                            </p>
+                                            <h5 class="others_title">
+                                                What is REST API? Uses, Advantages and Edges.
+                                            </h5>
+                                            <p class="others_text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                                eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna.
+                                            </p>
+                                            <p class="others_name">
+                                                Julia Orji
+                                            </p>
+
+                                            <p class="others_time">
+                                                July 21, 2020 . 5 min read
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="others_img">
+                                        <img src="assets/img/impact.jpg" class="card-img-top" alt="...">
+
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-lg-2 col-md-2 col-sm-1">
+                                 </div> -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Fifth Row -->
+
+                    <div class="row mb-5">
+
+                        <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+                        <div class="col-lg-10">
+                            <div class="row no-wrap">
+                                <div class="col">
+
+                                    <div class="card no-border special-card">
+                                        <div class="card-body">
+                                            <p class="others_recom">
+                                                RECOMMENDED.
+                                            </p>
+                                            <h5 class="others_title">
+                                                What is REST API? Uses, Advantages and Edges.
+                                            </h5>
+                                            <p class="others_text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                                eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna.
+                                            </p>
+                                            <p class="others_name">
+                                                Julia Orji
+                                            </p>
+
+                                            <p class="others_time">
+                                                July 21, 2020 . 5 min read
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="others_img">
+                                        <img src="assets/img/webs.jpg" class="card-img-top" alt="...">
+
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-lg-2 col-md-2 col-sm-1">
+                                 </div> -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- Sixth Row -->
+
+                    <div class="row mb-5">
+
+                        <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+                        <div class="col-lg-10">
+                            <div class="row no-wrap">
+                                <div class="col">
+
+                                    <div class="card no-border special-card">
+                                        <div class="card-body">
+                                            <p class="others_recom">
+                                                RECOMMENDED.
+                                            </p>
+                                            <h5 class="others_title">
+                                                What is REST API? Uses, Advantages and Edges.
+                                            </h5>
+                                            <p class="others_text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                                eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna.
+                                            </p>
+                                            <p class="others_name">
+                                                Julia Orji
+                                            </p>
+
+                                            <p class="others_time">
+                                                July 21, 2020 . 5 min read
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="others_img">
+                                        <img src="assets/img/connect.jpg" class="card-img-top" alt="...">
+
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-lg-2 col-md-2 col-sm-1">
+                                 </div> -->
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Seventh Row -->
+
+                    <div class="row mb-5">
+
+                        <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+                        <div class="col-lg-10">
+                            <div class="row no-wrap">
+                                <div class="col">
+
+                                    <div class="card no-border special-card">
+                                        <div class="card-body">
+                                            <p class="others_recom">
+                                                RECOMMENDED.
+                                            </p>
+                                            <h5 class="others_title">
+                                                What is REST API? Uses, Advantages and Edges.
+                                            </h5>
+                                            <p class="others_text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                                eiusmod
+                                                tempor
+                                                incididunt ut labore et dolore magna.
+                                            </p>
+                                            <p class="others_name">
+                                                Julia Orji
+                                            </p>
+
+                                            <p class="others_time">
+                                                July 21, 2020 . 5 min read
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="others_img">
+                                        <img src="assets/img/network.jpg" class="card-img-top" alt="...">
+
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-lg-2 col-md-2 col-sm-1">
+                                 </div> -->
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </main>
+
+
+
+
+    <!-- Main Section ends -->
+
+
+    <footer>
+        <!-- Write footer here -->
+
+        <div class="container pt-5 pb-5 footer__wrapper">
+            <div class="footer__logo__container">
+                <div class="footer__logo">
+                    <a href="#"><img src="/assets/img/logo.svg" alt="footer logo"></a>
+                </div>
+            </div>
+
+            <div class="footer__menus__container">
+                <div>
+                    <h6>Product</h6>
+                    <ul>
+                        <li><a href="auth.html">Authentication API</a></li>
+                        <li><a href="#">Models</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                  </div>
+          
+                  <div>
+                    <h6>Collaboration</h6>
+                    <ul>
+                      <li><a href="#">Comments</a></li>
+                      <li><a href="#">Track Changes</a></li>
+                    </ul>
+                  </div>
+          
+                  <div>
+                    <h6>Explore</h6>
+                    <ul>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/nav.js"></script>
+</body>
+
+</html>

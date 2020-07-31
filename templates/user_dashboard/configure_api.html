@@ -1,0 +1,227 @@
+<!--  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+  <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <link rel="stylesheet" href="{% static 'css/style.min.css'%}">
+  <title>MicroAPI - Dashboard</title>
+</head>
+<body>
+  <!-- dashbord -->
+  <div id="dashboard">
+    <!-- dashboard side bar -->
+    <div class="sidebar">
+      <div class="sidebar__logo">
+        <a href="../index.html"><img src="{% static 'img/logo-alt.svg' %}" alt=""></a>
+      </div>
+
+      <div class="sidebar__section">
+        <div class="sidebar__section__header">
+          <h5>Projects <i class="fas fa-angle-up"></i></h5>
+          <ul class="sidebar__section__header__list">
+            <li>
+              <div class="pretty p-icon">
+                <input type="checkbox" />
+                <div class="state">
+                  <i class="icon material-icons">done</i>
+                  <label><span class="spacer"></span>Acme Project's</label>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="pretty p-icon">
+                <input type="checkbox" />
+                <div class="state">
+                  <i class="icon material-icons">done</i>
+                  <label><span class="spacer"></span>Sentry Project's</label>
+                </div>
+              </div>
+            </li>
+            <button class="add-new"><span>+</span>
+              <p>New project</p>
+            </button>
+          </ul>
+        </div>
+        <div class="sidebar__section__content">
+          <div class="sidebar__section__content__sub">
+            <h5>Tools <i class="fas fa-angle-up"></i></h5>
+            <ul class="sidebar__section__content__sub__list">
+              <li>
+                <p>MicroAPI</p>
+              </li>
+              <li>
+                <p>Frontends</p>
+              </li>
+              <li>
+                <p>Database</p>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar__section__content__sub">
+            <h5 class="sidebar__section__content__sub__title">Accounts <i class="fas fa-angle-up"></i></h5>
+            <ul class="sidebar__section__content__sub__list">
+              <li>
+                <p>Account settings</p>
+              </li>
+              <li>
+                <p>Sign out</p>
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar__section__content__sub">
+            <h5 class="sidebar__section__content__sub__title">Contribute <i class="fas fa-angle-up"></i></h5>
+            <ul class="sidebar__section__content__sub__list">
+              <li>
+                <p>Contribute to MicroAPI</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <header>
+        <a class="menu"><i class="fas fa-bars"></i></a>
+        <div class="profile_section">
+          <a><i class="far fa-bell"></i></a>
+          <div class="profile_section__pix">Samuel Eze<a><i class="far fa-user"></i></a></div>
+        </div>
+      </header>
+        <div class="configure_blog">
+          <div class="configure_blog__main row ml-3 mt-4 mr-3">
+          <!-- code goes here-->
+          <div class="configure_blog_sect1__cont1 col-lg-8 ">
+            <div class="configure_blog_sect1__cont2">
+              <h2>Configure Blog Api</h2>
+              <p>This is a map of user data. It contains sign up information needed from the user before auth</p>
+              <div class="configure_blog_sect1__cont2__apigraph">
+                <h5>API Usage</h5>
+                <div class="configure_blog_sect1__cont2__apigraph__cont">
+                  <div class="apistatus"><div class="apistatus__dot"></div>Status</div>
+                  <div class="apistats"><div class="apistats__dot"></div>Stats</div>
+                  <div class="apigraph_cont"><canvas id="apigraph"></canvas>  </div>
+                </div>
+              </div>
+              <form>
+                <div class="box">
+                  <label for="apiKey">API Key</label>
+                  <input type="text" placeholder="23pcei3434kef">
+                </div>
+                <div class="box">
+                  <label for="baseId">Base ID</label>
+                  <input type="text" placeholder="94nfkkeo454nkf">
+                </div>
+                <div class="box">
+                  <label for="blogApi">Content Type</label>
+                  <input type="text" placeholder="Blog API">
+                </div>
+                <div class="box">
+                  <label for="node">Node type</label>
+                  <input type="text" placeholder="Blog API">
+                </div>
+                <div class="row ml-0 mr-0 pl-0 pr-0">
+                  <div class="box_small box_small--modifier1">
+                    <label for="servers">Allowable Servers</label>
+                    <input type="text" placeholder="API Administrators">
+                  </div>
+                  <div class="box_small box_small--modifier2">
+                    <label for="service">Ajax Proxy Service</label>
+                    <input type="text" placeholder="www.domain.com">
+                  </div>
+                  <div class="box_small box_small--modifier3">
+                    <label for="token">API Token</label>
+                    <input type="text" placeholder="Blog API">
+                  </div>
+                  <div class="box_small box_small--modifier4">
+                    <label for="Authentication">Authentication</label>
+                    <input type="text" placeholder="Blog API">
+                  </div>
+                  <div class="box_small box_small--modifier5">
+                    <label for="Porthost">Port host</label>
+                    <input type="text" placeholder="www.domain.com">
+                  </div>
+                  <div class="check_box ">
+                    <label for="transport">Transport level Security</label>
+                      <div class="pretty p-icon">
+                        <input type="checkbox" />
+                        <div class="state">
+                          <i class="icon material-icons">done</i>
+                          <label><span class="spacer"></span>Http</label>
+                        </div>
+                      </div>
+                      <div class="pretty p-icon">
+                        <input type="checkbox" />
+                        <div class="state">
+                          <i class="icon material-icons">done</i>
+                          <label><span class="spacer"></span>Https</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </form>
+              <div class="configure_blog_sect1__cont2__footer">
+                <a><i class="fas fa-save"></i>Save</a>
+              </div>
+            </div>
+          </div>
+          <div class="configure_blog_sect2 col-lg-3 ml-3 mb-4">
+            <div class="configure_blog_sect2__pie">
+              <h4>Statistics</h4><hr>
+              <p>Overall API Usage</p>
+              <div class="pie_chart"><canvas id="pie"></canvas></div>
+            </div>
+            <div class="configure_blog_sect2__doc">
+              <h4>Documentation<i class="fas fa-search"></i></h4><hr>
+              <ul>
+                <li><a href="#">Sign up with email</a></li>
+                <li><a href="#">Sign in with facebook</a></li>
+                <li><a href="#">Sign in with Google</a></li>
+                <li><a href="#">Confirm password</a></li>
+                <li><a href="#">Change password</a></li>
+                <li><a href="#">Reset password</a></li>
+                <li><a href="#">Confirm password</a></li>
+                <li><a href="#">Reset password</a></li>
+              </ul>
+              <a class="view__doc"><i class="fas fa-file"></i>View doc</a>
+          </div>
+          <div class="configure_blog_sect2__git">
+            <a href="#">Open GitHub</a>
+          </div>
+          <div class="configure_blog_sect2__sample">
+            <h4>Code sample</h4><hr>
+            <p>Select Language</p>
+            <select name="language" id="language">
+              <option value="python">Python</option>
+              <option value="java">Java</option>
+              <option value="javascript">Javascript</option>
+            </select>
+            <h5>Easily download code sample of different programming languages</h5>
+            <a href="#"><i class="fas fa-book-open"></i>view sample</a><hr>
+            <a href="#"><i class="fas fa-download"></i>Download</a>
+          </div>
+        </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/dashboard_sidebar.js' %}"></script>
+  <script src="{% static 'js/configure_api.js' %}"></script>
+</body>
+</html>

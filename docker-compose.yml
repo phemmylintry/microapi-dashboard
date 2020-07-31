@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+    dashboard:
+        restart: always
+        build: .
+        command: bash -c "python manage.py runserver 0.0.0.0:8000"
+        volumes: 
+            - .:/app
+        ports: 
+            - 8030:8000

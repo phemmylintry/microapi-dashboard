@@ -1,0 +1,57 @@
+#sign_form{
+    .google-btn{
+        margin-bottom: 25px; 
+        button {
+            background: $secondary-color !important;
+            outline: none;
+            color: gray;
+            border: 1px solid #ced4da;
+            line-height: 20px;
+            font-weight: bold;
+            &:hover{
+                box-shadow: -1px -2px 2px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.1);
+            }
+            img{
+                width: 30px !important;
+                height: 30px !important;
+                margin-right: 5px;
+            }
+        }
+    }
+    .btn-block{
+        padding:0.6em !important;
+    }
+    .form-group{
+        margin-bottom:1.5em !important;
+    }
+    label{
+        margin:0 !important;;
+        font-size:15px!important;
+    }
+    input{
+        background-color: $secondary-color !important;
+        border-radius: 0 !important;
+        padding-left: 3px;
+    }
+    ::placeholder{
+        font-size: 14px !important;
+    }
+    .sign {
+        text-decoration: none;
+        color: $primary-color !important;
+    
+        &:hover {
+          text-decoration: none;
+          color: $primary-color !important;
+        }
+    }
+    #a-link {
+        color: $secondary-color !important;
+    }
+    
+
+}
+
+$primary-color: #1A1B2D;
+$secondary-color: #fff;
+$tetiary-color: #f4f4f4;

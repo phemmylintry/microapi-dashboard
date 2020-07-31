@@ -1,0 +1,36 @@
+{% extends 'homepage/base.html'%}
+
+{% block content %}
+{% load static %}
+<body id="layout">
+ 
+  <!-- Main body goes here -->
+<br>
+<div class="container">
+  	<div class="row my-4">
+	  	<div class="col-md-4"></div>
+	  	<div class="col-md-4 col-sm-12 col-lg-4 col-xs-4">	
+		  <h1 class="text-center"><strong>Sign In</strong></h1>
+		  <br>
+			<form action="/action_page.php" id="sign_form">
+				<div class="google-btn">
+					<button type="submit" class="btn-block"><img src="{% static 'img/google_logo.png' %}"/> Continue with Google</button>
+				</div>
+		     
+			  <div class="form-group">
+			    <label for="pwd">EMAIL</label>
+			    <input type="text" class="form-control input" placeholder="Enter your email adress...">
+			  </div>
+			  <div class="form-group">
+			    <label for="pwd">PASSWORD</label>
+			    <input type="password" class="form-control input"  value="">
+			  </div>
+			  <button type="submit" class="btn btn-block tetiary-btn">Sign in</button><br>
+			  <a href="recoverpasword.html" class="text-center">Forgot Password?</a>
+			</form><br><br>
+	    </div>
+	</div>
+</div>
+  
+</body>
+{% endblock %}
