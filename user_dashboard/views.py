@@ -9,19 +9,24 @@ from homepage.views import index
 @login_required(login_url='/accounts/signin')
 def api_list(request):
     user = User.objects.all()
-    all_apis = ApiList.objects.order_by('title')[:4]
+    all_apis = ApiList.objects.order_by('title')
     return render(request, 'user_dashboard/dashboard.html', {'all_apis':all_apis})
 
 
 def adding_api(request, id):
     add_to_api = ApiList.objects.get(id=id)
-    user = User.objects.get(username='FemiSocrates')
+    user = request.user
     print(user)
-    print(User.objects.all().first())
     User.add_api(api = add_to_api, name = user)
-    all_apis = ApiList.objects.order_by('title')[:4]
-    # return redirect('dashboard')
-    return render(request, 'user_dashboard/dashboard.html', {'all_apis':all_apis})
+    #all_apis = ApiList.objects.order_by('title')
+    return redirect('/dashboard')
+    #return render(request, 'user_dashboard/dashboard.html', {'all_apis':all_apis})
+
+def rmv_api(request, id):
+    add_to_api = ApiList.objects.get(id=id)
+    user = request.user
+    user.api_list.remove(add_to_api)
+    return redirect('/dashboard')
 
 
 @login_required(login_url='/accounts/signin')

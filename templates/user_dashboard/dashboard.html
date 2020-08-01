@@ -34,7 +34,7 @@
                   <!-- Single box -->
                   {% for obj in all_apis %}
 
-                  {% if obj in request.user.apis.all %}
+                  {% if obj in request.user.api_list.all %}
                   <div class="dragBox active-box">
                     <div class="api__box">
                       <div class="api__box__shadow">
@@ -47,7 +47,8 @@
                                 <div class="state p-success">
                                     <label></label>
                                 </div>
-                              </div>  
+                              </div>
+                              
                           </div>
                           <div class="api__box__text">
                             <small>{{ obj.description }}</small>
@@ -59,6 +60,7 @@
                           </div>
                           <div class="api__box__buttons">
                             <a href="{% url 'dashboard:configure_api' %}"><button class="primary-btn">Configure</button></a>
+                            
                             <!-- <input type="radio" name="" id=""> -->
                             <!-- success -->
                             <div class="prindex.html pretty p-default p-round p-toggle">
@@ -70,6 +72,9 @@
                                   <label></label>
                               </div>
                             </div>
+                          </div>
+                          <div>
+                            <a href="{% url 'dashboard:rmv_api' obj.id %}"><button>- Remove</button></a>
                           </div>
                         </div>
                       </div>
@@ -96,6 +101,7 @@
                   
                   <!-- Single box -->
                   {% for all_api in all_apis %}
+                  {% if all_api not in request.user.api_list.all %}
                   <div class="dragBox inactive-box">
                     <div class="api__box">
                       <div class="api__box__shadow">
@@ -136,6 +142,7 @@
                       </div>
                     </div>
                   </div> <!-- Single box end -->
+                  {% endif %}
                   {% endfor %}
                 </article>
                 
