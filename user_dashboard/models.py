@@ -1,10 +1,11 @@
 from django.db import models
+# from accounts.models import User
 
 #Models for all the API's in the database
 class ApiList(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    stats = models.CharField(max_length=255, default='3hrs')
+    stats = models.CharField(max_length=255, default='3req/hr')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 

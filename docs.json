@@ -1,0 +1,21 @@
+{
+  "microapi" : {
+    "comments" : {
+      "info": {
+        "team": "The MicroAPI TEAM",
+        "title": "Comment MicroAPI",
+        "api_reference": "The Comment API gives the developer access to built-in functionalities for when they want to implement comments and replies within their own application. Basic functionalities are available for creation, update, and deletion of comments and replies while ensuring that only users authorized are allowed to use such functionalities. Additionally, there are extra features such as filtering, sorting, voting, and flagging available. You can use the Comment MicroApi in test mode, which does not affect your live data. The API key you use to authenticate the request determines whether the request is in live mode or test mode. The Comment MicroApi differs for every account as we release new versions and tailor functionality. Log in to see docs customized to your version of the API, with your test key and data.<br><br>",
+        "video_guide": {
+          "title" : "Video Guide",
+          "description" : "The Comment API gives the developer access to built-in functionalities for when they want to implement comments and replies within their own application. Basic functionalities are available for creation, update, and deletion of comments and replies while ensuring that only users authorized are allowed to use such functionalities. Additionally, there are extra features such as filtering, sorting, voting, and flagging available.",
+          "video_link" : null
+        },
+        "tutorial" : {
+          "title" : "Tutorial",
+          "description" : "The Comment API gives the developer access to built-in functionalities for when they want to implement comments and replies within their own application. Basic functionalities are available for creation, update, and deletion of comments and replies while ensuring that only users authorized are allowed to use such functionalities. Additionally, there are extra features such as filtering, sorting, voting, and flagging available. The Comment API gives the developer access to built-in functionalities for when they want to implement comments and replies within their own application. Basic functionalities are available for creation, update, and deletion of comments and replies while ensuring that only users authorized are allowed to use such functionalities. Additionally, there are extra features such as filtering, sorting, voting, and flagging available. The Comment API gives the developer access to built-in functionalities for when they want to implement comments and replies within their own application. Basic functionalities are available for creation, update, and deletion of comments and replies while ensuring that only users authorized are allowed to use such functionalities. Additionally, there are extra features such as filtering, sorting, voting, and flagging available."
+        },
+      },
+      "urls" : null
+    }
+  }
+}

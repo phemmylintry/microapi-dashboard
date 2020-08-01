@@ -9,16 +9,31 @@
         <h1 class="text-center"><strong>Sign Up</strong></h1>
         <br />
 
-        <form action="/action_page.php" id="sign_form">
+        <form action="{% url 'accounts:signup' %}" method="POST" id="sign_form">
+          {% csrf_token %}
+          <div class="text-primary">
+            {% for message in messages %} {{ message }} {% endfor %}
+          </div>
           <div class="google-btn">
             <button type="submit" class="primary-btn btn-block">
-              <img src="{% static 'img/google_logo.png' %}"/> Continue with Google
+              <img src="{% static 'img/google_logo.png' %}" /> Continue with
+              Google
             </button>
+          </div>
+          <div class="form-group">
+            <label for="email">USERNAME</label>
+            <input
+              name="username"
+              type="text"
+              class="form-control"
+              placeholder="Enter your Username..."
+            />
           </div>
           <div class="form-group">
             <label for="email">FIRST NAME</label>
             <input
               type="text"
+              name="firstname"
               class="form-control"
               placeholder="Enter your first name..."
             />
@@ -27,6 +42,7 @@
             <label for="pwd">LAST NAME</label>
             <input
               type="text"
+              name="lastname"
               class="form-control"
               placeholder="Enter your last name..."
             />
@@ -35,13 +51,27 @@
             <label for="pwd">EMAIL</label>
             <input
               type="text"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email adress..."
+            />
+          </div>
+          <div class="form-group">
+            <label for="pwd">phonenumber</label>
+            <input
+              name="phonenumber"
+              type="text"
               class="form-control"
               placeholder="Enter your email adress..."
             />
           </div>
           <div class="form-group">
             <label for="pwd">PASSWORD</label>
-            <input type="password" class="form-control" />
+            <input type="password" name="pwd" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="pwd">CONFIRM PASSWORD</label>
+            <input type="password" name="confirmpwd" class="form-control" />
           </div>
           <button type="submit" class="btn btn-block tetiary-btn">
             Sign up

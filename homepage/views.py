@@ -1,13 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-# Create your views here.
+from django.core.mail import send_mail
+import requests
 
-
-# # Home page view
-# class HomeView(TemplateView):
-#     template_name = "homepage/index.html"
-
-# # Home page view
+# Home page view
 def index(request):
     return render(request, 'homepage/index.html')
 
@@ -19,8 +14,26 @@ def about(request):
 
 # Contact us page
 def contact_us(request):
-    context = {}
-    return render(request, 'homepage/contact.html', context)
+    """Sends an email to admin with user's data from the frontend"""
+    if request.method == "POST":
+        if request.POST.get("submit"):
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            message = request.POST.get("message")
+            admin = "immanuelhng@gmail.com"
+
+            # validation and sending an email with the email microapi
+            if name and email and message:
+                url = "https://email.microapi.dev/v1/sendmail/"
+                response = requests.post(url, data = {
+                "recipient": admin,
+                "sender": "phemmylintry@gmail.com",
+                "subject": (email + '\n' + name),
+                "body": message,
+                "cc": "",
+                "bcc": ""}
+                )
+    return render(request, 'homepage/contact.html')
 
 
 # Views to FAQ
@@ -34,3 +47,16 @@ def signin(request):
 #views to sign up
 def signup(request):
     return render(request, 'accounts/sign_up.html')
+
+
+#views to recover password
+def recover_password(request):
+    return render(request, 'accounts/recover_password.html')
+
+#views to recover password
+def reset_link(request):
+    return render(request, 'accounts/reset_link_sent.html')
+
+#views to recover password
+def reset_password(request):
+    return render(request, 'accounts/reset_password.html')

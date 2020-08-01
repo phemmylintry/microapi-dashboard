@@ -8,7 +8,7 @@
 @import 'pages/api-endpoints';
 @import 'pages/faq';
 @import 'pages/blogs';
-@import 'pages/index';
+// @import 'pages/index';
 @import 'pages/blog_search';
 @import 'pages/signup';
 @import 'pages/recoverpassword';
@@ -18,7 +18,11 @@
 @import 'pages/doclayout';
 @import 'pages/auth';
 @import 'dashboard/index';
+@import 'dashboard/settings';
 @import 'pages/configure-blog-api';
+@import 'pages/api_getstarted';
+@import 'pages/api-reference';
+@import 'pages/api-tutorial';
 
 //Individual Documentation 
 @import 'pages/documentation';

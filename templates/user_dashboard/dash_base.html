@@ -12,6 +12,7 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
   <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="{% static 'css/style.min.css'%}">
   <title>MicroAPI - Dashboard</title>
@@ -23,7 +24,7 @@
     <!-- dashboard side bar -->
     <div class="sidebar">
       <div class="sidebar__logo">
-        <a href="../index.html"><img src="{% static 'img/logo-alt.svg' %}" alt=""></a>
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo-alt.svg' %}" alt=""></a>
       </div>
 
       <div class="sidebar__section">
@@ -31,27 +32,61 @@
           <h5>Projects <i class="fas fa-angle-up"></i></h5>
           <ul class="sidebar__section__header__list">
             <li>
-              <div class="pretty p-icon">
+              <a href="#">Acme Project</a>
+              <!-- <div class="pretty p-icon">
                 <input type="checkbox" />
                 <div class="state">
                   <i class="icon material-icons">done</i>
                   <label><span class="spacer"></span>Acme Project's</label>
                 </div>
-              </div>
+              </div> -->
             </li>
 
             <li>
-              <div class="pretty p-icon">
+              <a href="#" class="inactive">Sentry's Prrojects</a>
+
+              <!-- <div class="pretty p-icon">
                 <input type="checkbox" />
                 <div class="state">
                   <i class="icon material-icons">done</i>
                   <label><span class="spacer"></span>Sentry Project's</label>
                 </div>
-              </div>
+              </div> -->
+
             </li>
-            <button class="add-new"><span>+</span>
-              <p>New project</p>
+            <button class="add-new" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addApiModal">
+              <span>+</span>
+              <a href="#">New project</a>
             </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="addApiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Project</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button> -->
+                  </div>
+                  <div class="modal-body">
+
+                    <div class="form-group">
+                      <label for="project name"></label>
+                      <input type="text"
+                        class="form-control" name="project name" id="" aria-describedby="helpId" placeholder="Enter project name">
+                      <small id="helpId" class="form-text text-muted"></small>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal end -->
           </ul>
         </div>
         <div class="sidebar__section__content">
@@ -59,13 +94,13 @@
             <h5>Tools <i class="fas fa-angle-up"></i></h5>
             <ul class="sidebar__section__content__sub__list">
               <li>
-                <p>MicroAPI</p>
+                <a href="#">MicroAPI</a>
               </li>
               <li>
-                <p>Frontends</p>
+                <a href="#">Frontends</a>
               </li>
               <li>
-                <p>Database</p>
+                <a href="#">Database</a>
               </li>
             </ul>
           </div>
@@ -73,10 +108,10 @@
             <h5 class="sidebar__section__content__sub__title">Accounts <i class="fas fa-angle-up"></i></h5>
             <ul class="sidebar__section__content__sub__list">
               <li>
-                <p>Account settings</p>
+                <a href="{% url 'dashboard:settings' %}">Account settings</a>
               </li>
               <li>
-                <p>Sign out</p>
+                <a href="{% url 'dashboard:logout' %}">Sign out</a>
               </li>
             </ul>
           </div>
@@ -84,7 +119,7 @@
             <h5 class="sidebar__section__content__sub__title">Contribute <i class="fas fa-angle-up"></i></h5>
             <ul class="sidebar__section__content__sub__list">
               <li>
-                <p>Contribute to MicroAPI</p>
+                <a href="#">Contribute to MicroAPI</a>
               </li>
             </ul>
           </div>
@@ -95,8 +130,35 @@
       <header>
         <a class="menu"><i class="fas fa-bars"></i></a>
         <div class="profile_section">
-          <a><i class="far fa-bell"></i></a>
-          <div class="profile_section__pix">Samuel Eze<a><i class="far fa-user"></i></a></div>
+          <a type="button" data-toggle="modal" data-target="#notificationModal"><i class="far fa-bell"></i></a>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false" data-keyboard="false">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">All Notifications</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="notification-content">
+
+                  </div>
+
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">Add Project</button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <!-- Modal end -->
+
+          <div class="profile_section__pix">{{user.username}}<a><i class="far fa-user"></i></a></div>
         </div>
       </header>
 
@@ -113,6 +175,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="{% static 'js/dashboard_sidebar.js' %}"></script>
 <script src="{% static 'js/dashboard.js' %}"></script>
+<script src="{% static 'js/configure_api.js' %}"></script>
 </body>
 
 </html>

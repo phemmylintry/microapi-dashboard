@@ -1,12 +1,12 @@
 // // #endpoint {
 //   //write inside here only
 
-  $border-color: #c6c6c6;
-  $font-color: #646464;
-  $sample-bg: #0b0a08ce;
-  $hover-bg: #4e4e4e;
-  $orange: #ff4500;
-  $black: #000000;
+$border-color: #c6c6c6;
+$font-color: #646464;
+$sample-bg: #0b0a08ce;
+$hover-bg: #4e4e4e;
+$orange: #ff4500;
+$black: #000000;
 
 //   * {
 //     overflow: hidden;
@@ -191,330 +191,330 @@
 //           animation: all 1s;
 //         }
 
-        // li.refNav__link {
-        //   display: block;
-        //   width: 100%;
-        //   color: $primary-color;
-        //   list-style: none;
-        //   margin: 0.5rem;
-        //   line-height: 2.5rem;
+// li.refNav__link {
+//   display: block;
+//   width: 100%;
+//   color: $primary-color;
+//   list-style: none;
+//   margin: 0.5rem;
+//   line-height: 2.5rem;
 
-        //   a {
-        //     line-height: 2.5rem;
-        //     padding-left: 0.5rem;
-        //     display: block;
-        //     width: 100%;
-        //     color: $primary-color;
+//   a {
+//     line-height: 2.5rem;
+//     padding-left: 0.5rem;
+//     display: block;
+//     width: 100%;
+//     color: $primary-color;
 
-        //     &:hover {
-        //       color: $secondary-color;
-        //     }
-        //   }
+//     &:hover {
+//       color: $secondary-color;
+//     }
+//   }
 
-        //   &:hover {
-        //     line-height: 2.5rem;
-        //     padding-left: 0.5rem;
-        //     background: $hover-bg;
-        //     color: $secondary-color;
-        //   }
+//   &:hover {
+//     line-height: 2.5rem;
+//     padding-left: 0.5rem;
+//     background: $hover-bg;
+//     color: $secondary-color;
+//   }
 
-        //   .more {
-        //   }
+//   .more {
+//   }
 
-        //   .more__content {
-        //     display: none;
-        //   }
+//   .more__content {
+//     display: none;
+//   }
 
-        //   .refNav__link__sub {
-        //     display: none;
-        //     color: $font-color;
-        //     margin: 0.5rem;
-        //   }
-    //     // }
-    //   }
-    // }
+//   .refNav__link__sub {
+//     display: none;
+//     color: $font-color;
+//     margin: 0.5rem;
+//   }
+//     // }
+//   }
+// }
 
-    // .refIntro {
-    //   a {
-    //     color: $theme-color;
-    //   }
+// .refIntro {
+//   a {
+//     color: $theme-color;
+//   }
 
-    //   .signupSteps {
-    //     background: #e5e5e5;
+//   .signupSteps {
+//     background: #e5e5e5;
 
-    //     ol {
-    //       li {
-    //         list-style-type: decimal;
-    //       }
-    //     }
-    //   }
-    // }
+//     ol {
+//       li {
+//         list-style-type: decimal;
+//       }
+//     }
+//   }
+// }
 
-    .start {
-      a {
-        background: $border-color;
-        padding: 0.3rem;
-        color: $primary-color;
-        text-decoration: none;
-      }
+.start {
+  a {
+    background: $border-color;
+    padding: 0.3rem;
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+.shortcut__search__form {
+  width: 100%;
+  height: 2.5rem;
+  margin: auto;
+  padding-right: 2%;
+  background-color: $secondary-color;
+  border: solid 1px $border-color;
+
+  button,
+  input {
+    height: 100%;
+    background: $secondary-color;
+    border: transparent;
+  }
+
+  button {
+    padding: 0 2%;
+    background: $border-color;
+
+    span {
+      margin-top: 0.5rem;
     }
 
-    .shortcut__search__form {
-      width: 100%;
-      height: 2.5rem;
-      margin: auto;
-      padding-right: 2%;
-      background-color: $secondary-color;
-      border: solid 1px $border-color;
-
-      button,
-      input {
-        height: 100%;
-        background: $secondary-color;
-        border: transparent;
-      }
-
-      button {
-        padding: 0 2%;
-        background: $border-color;
-
-        span {
-          margin-top: 0.5rem;
-        }
-
-        &:hover {
-          background: $hover-bg;
-          color: $secondary-color;
-        }
-      }
-
-      input {
-        outline: none;
-      }
+    &:hover {
+      background: $hover-bg;
+      color: $secondary-color;
     }
+  }
 
-    .quicknav {
-      // border-right: solid 1px $border-color;
+  input {
+    outline: none;
+  }
+}
 
-      .shortcut {
-        margin-top: 2rem;
+.quicknav {
+  // border-right: solid 1px $border-color;
 
-        .shortcut__heading {
-          font-weight: bolder;
-          color: $hover-bg;
-        }
+  .shortcut {
+    margin-top: 2rem;
 
-        .shortcut__link {
-          width: 100%;
-          height: 2.3rem;
-          margin: 0.5rem 0;
-          padding: 0.2rem 1rem;
-          text-decoration: none;
-          color: $primary-color;
-
-          &:hover {
-            background: $hover-bg;
-          }
-
-          .shortcut__link__btn--post,
-          .shortcut__link__btn--put {
-            width: 4rem;
-            border-radius: 5px;
-            padding: 0.2rem 0.7rem;
-            font-weight: bold;
-            text-align: center;
-            color: $secondary-color;
-          }
-
-          .shortcut__link__btn--put {
-            background: $orange;
-          }
-
-          .shortcut__link__btn--post {
-            background: $theme-color;
-          }
-
-          .shortcut__link__text {
-            word-spacing: 0.001rem;
-          }
-
-          &:hover {
-            color: $secondary-color;
-          }
-        }
-      }
-    }
-
-    .endpoints {
+    .shortcut__heading {
+      font-weight: bolder;
       color: $hover-bg;
+    }
 
-      .endpoint__desc {
-        .endpoint {
-          .endpoint__test {
-            p.test__action__btn--post {
-              background: $theme-color;
-              padding: 0.2rem 0.7rem;
-              color: $secondary-color;
-              border-radius: 5px;
-            }
+    .shortcut__link {
+      width: 100%;
+      height: 2.3rem;
+      margin: 0.5rem 0;
+      padding: 0.2rem 1rem;
+      text-decoration: none;
+      color: $primary-color;
 
-            .github__link {
-              color: $hover-bg;
-              opacity: 0.5;
-            }
-
-            .endpoint__test__textarea {
-              border: solid 1px $border-color;
-              border-radius: 5px;
-              height: auto;
-              padding: 0.5rem;
-
-              textarea {
-                width: 100%;
-                height: auto;
-                border: none;
-
-                resize: none;
-                opacity: 0.5;
-
-                &:focus {
-                  outline: none;
-                }
-
-                .endpoint__test__copy {
-                  text-align: right;
-
-                  a {
-                    color: $font-color;
-                    opacity: 0.5;
-
-                    &:hover {
-                      cursor: pointer;
-                    }
-                  }
-                }
-              }
-
-              .endpoint__test__copy {
-                text-align: right;
-
-                a {
-                  color: $font-color;
-                  opacity: 0.5;
-                }
-              }
-            }
-          }
-
-          .param {
-            margin-top: 2rem;
-
-            .param__heading {}
-
-            .param__type {
-              margin-top: 2rem;
-
-              .param__type__heading {
-                span {
-                  font-weight: bolder;
-                }
-
-                .asterisk {
-                  color: red;
-                }
-
-                .param__type__data {
-                  padding: 0.2rem 0.8rem;
-                  background: $tetiary-color;
-                  border-radius: 5px;
-                }
-              }
-
-              .param__type__sample {
-                div:nth-child(odd) {
-                  background: $border-color;
-                  padding: 0.3rem 1rem;
-                }
-
-                div:nth-child(even) {
-                  padding: 0.3rem 1rem;
-                  background: $hover-bg;
-                  color: $secondary-color;
-                }
-              }
-            }
-          }
-        }
+      &:hover {
+        background: $hover-bg;
       }
 
-      .endpoint__sample {
-        padding: 5rem 0;
-        background: $sample-bg;
+      .shortcut__link__btn--post,
+      .shortcut__link__btn--put {
+        width: 4rem;
+        border-radius: 5px;
+        padding: 0.2rem 0.7rem;
+        font-weight: bold;
+        text-align: center;
+        color: $secondary-color;
+      }
 
-        p.heading {
-          color: $tetiary-color;
-          background: $hover-bg;
-          padding: 0.3rem 2rem;
+      .shortcut__link__btn--put {
+        background: $orange;
+      }
+
+      .shortcut__link__btn--post {
+        background: $theme-color;
+      }
+
+      .shortcut__link__text {
+        word-spacing: 0.001rem;
+      }
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.endpoints {
+  color: $hover-bg;
+
+  .endpoint__desc {
+    .endpoint {
+      .endpoint__test {
+        p.test__action__btn--post {
+          background: $theme-color;
+          padding: 0.2rem 0.7rem;
+          color: $secondary-color;
+          border-radius: 5px;
         }
 
-        .req {
-          select {
-            display: block;
-            height: 2rem;
-            margin-left: 1rem;
+        .github__link {
+          color: $hover-bg;
+          opacity: 0.5;
+        }
 
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            background: $black;
-            color: $secondary-color;
+        .endpoint__test__textarea {
+          border: solid 1px $border-color;
+          border-radius: 5px;
+          height: auto;
+          padding: 0.5rem;
+
+          textarea {
+            width: 100%;
+            height: auto;
             border: none;
+
+            resize: none;
+            opacity: 0.5;
 
             &:focus {
               outline: none;
             }
-          }
 
-          .req__code {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            background: $black;
+            .endpoint__test__copy {
+              text-align: right;
 
-            code {
-              color: $theme-color;
-            }
-          }
-        }
+              a {
+                color: $font-color;
+                opacity: 0.5;
 
-        .res__type {
-          margin-left: 1rem;
-
-          .res__tab {
-            padding: 0 0.5rem;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            color: $secondary-color;
-
-            &:hover {
-              background: $black;
-              cursor: pointer;
+                &:hover {
+                  cursor: pointer;
+                }
+              }
             }
           }
 
-          .active_tab {
-            background: $black;
+          .endpoint__test__copy {
+            text-align: right;
+
+            a {
+              color: $font-color;
+              opacity: 0.5;
+            }
           }
         }
+      }
 
-        .res__body {
-          padding: 1rem;
-          background: $black;
+      .param {
+        margin-top: 2rem;
 
-          code {
-            color: $theme-color;
+        .param__heading {}
+
+        .param__type {
+          margin-top: 2rem;
+
+          .param__type__heading {
+            span {
+              font-weight: bolder;
+            }
+
+            .asterisk {
+              color: red;
+            }
+
+            .param__type__data {
+              padding: 0.2rem 0.8rem;
+              background: $tetiary-color;
+              border-radius: 5px;
+            }
+          }
+
+          .param__type__sample {
+            div:nth-child(odd) {
+              background: $border-color;
+              padding: 0.3rem 1rem;
+            }
+
+            div:nth-child(even) {
+              padding: 0.3rem 1rem;
+              background: $hover-bg;
+              color: $secondary-color;
+            }
           }
         }
       }
     }
+  }
+
+  .endpoint__sample {
+    padding: 5rem 0;
+    background: $sample-bg;
+
+    p.heading {
+      color: $tetiary-color;
+      background: $hover-bg;
+      padding: 0.3rem 2rem;
+    }
+
+    .req {
+      select {
+        display: block;
+        height: 2rem;
+        margin-left: 1rem;
+
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background: $black;
+        color: $secondary-color;
+        border: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .req__code {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background: $black;
+
+        code {
+          color: $theme-color;
+        }
+      }
+    }
+
+    .res__type {
+      margin-left: 1rem;
+
+      .res__tab {
+        padding: 0 0.5rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: $secondary-color;
+
+        &:hover {
+          background: $black;
+          cursor: pointer;
+        }
+      }
+
+      .active_tab {
+        background: $black;
+      }
+    }
+
+    .res__body {
+      padding: 1rem;
+      background: $black;
+
+      code {
+        color: $theme-color;
+      }
+    }
+  }
+}
 
 // }

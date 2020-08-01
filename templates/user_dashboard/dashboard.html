@@ -1,90 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'user_dashboard/dash_base.html' %}
+
+{% block content %}
+
 {% load static %}
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
-<link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="{% static 'css/style.min.css'%}">
-<title>MicroAPI - Dashboard</title>
-</head>
-
-<body>
-  <!-- dashbord -->
-	<div id="dashboard">
-        <!-- dashboard side bar -->
-        <div class="sidebar">
-            <div class="sidebar__logo">
-                <a href="../index.html"><img src="{% static 'img/logo-alt.svg' %}" alt=""></a>
-            </div>
-
-            <div class="sidebar__section">
-                <div class="sidebar__section__header">
-                    <h5>Projects  <i class="fas fa-angle-up"></i></h5>
-                    <ul class="sidebar__section__header__list">
-                        <li>
-                          <div class="pretty p-icon">
-                            <input type="checkbox" />
-                            <div class="state">
-                              <i class="icon material-icons">done</i>
-                              <label><span class="spacer"></span>Acme Project's</label>
-                            </div>
-                          </div>
-                        </li>
-                        
-                        <li>
-                          <div class="pretty p-icon">
-                            <input type="checkbox" />
-                            <div class="state">
-                              <i class="icon material-icons">done</i>
-                              <label><span class="spacer"></span>Sentry Project's</label>
-                            </div>
-                          </div>
-                        </li>
-                        <button class="add-new"><span>+</span><p>New project</p></button>
-                    </ul>
-                </div>
-                <div class="sidebar__section__content">
-                    <div class="sidebar__section__content__sub">
-                        <h5>Tools <i class="fas fa-angle-up"></i></h5>
-                        <ul class="sidebar__section__content__sub__list">
-                            <li><p>MicroAPI</p></li>
-                            <li><p>Frontends</p></li>
-                            <li><p>Database</p></li>
-                        </ul>
-                    </div>
-                    <div class="sidebar__section__content__sub">
-                        <h5 class="sidebar__section__content__sub__title">Accounts <i class="fas fa-angle-up"></i></h5>
-                        <ul class="sidebar__section__content__sub__list">
-                            <li><p>Account settings</p></li>
-                            <li><p>Sign out</p></li>
-                        </ul>
-                    </div>
-                    <div class="sidebar__section__content__sub">
-                        <h5 class="sidebar__section__content__sub__title">Contribute <i class="fas fa-angle-up"></i></h5>
-                        <ul class="sidebar__section__content__sub__list">
-                            <li><p>Contribute to MicroAPI</p></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content">
-          <header>
-              <a class="menu"><i class="fas fa-bars"></i></a>
-              <div class="profile_section">
-                  <a><i class="far fa-bell"></i></a>
-                  <div class="profile_section__pix">Samuel Eze<a><i class="far fa-user"></i></a></div>
-              </div>
-          </header>
-
-
           <!-- Main dashboard content starts here -->
 
           <div class="dashboard__main">
@@ -99,15 +17,30 @@
 
               <section id="container">
                 <article class="dropBox active-row">
-                  {% if mylist %}
+
+                  <div id="empty-api" class="empty-api"
+                    style="display:none; flex-direction:column; justify-content:center; align-items:center; width: 100%">
+                    <div className="icon">
+                      <span class="material-icons" style="font-size: 65px; color: lightgrey">cloud_off</span>
+                    </div>
+
+                    <div className="text" style="text-align:center;">
+                      <h4 style="color: lightgrey">There's nothing here</h4>
+                      <p style="color: lightgrey;">Drag from available APIs or use the add button to add new API</p>
+                    </div>
+                  </div>
+                  
+                  
                   <!-- Single box -->
-                  {% for mylist in mylists %}
+                  {% for obj in all_apis %}
+
+                  {% if obj in request.user.apis.all %}
                   <div class="dragBox active-box">
                     <div class="api__box">
                       <div class="api__box__shadow">
                         <div class="api__box__inner">
                           <div class="api__box__heading">
-                              <h5>{{ mylist.title }}</h5>  
+                              <h5>{{ obj.title }}</h5>  
                               <!-- toggle -->
                               <div class="pretty p-switch p-fill">
                                 <input type="checkbox" />
@@ -117,15 +50,15 @@
                               </div>  
                           </div>
                           <div class="api__box__text">
-                            <small>{{ mylist.description }}</small>
+                            <small>{{ obj.description }}</small>
                           </div>
                           <div class="api__box__stats">
                             <p>Stats <br>
-                              <span>{{ mylist.stats }}</span>
+                              <span>{{ obj.stats }}</span>
                             </p>
                           </div>
                           <div class="api__box__buttons">
-                            <a href="{% url 'configure_api' %}"><button class="primary-btn">Configure</button></a>
+                            <a href="{% url 'dashboard:configure_api' %}"><button class="primary-btn">Configure</button></a>
                             <!-- <input type="radio" name="" id=""> -->
                             <!-- success -->
                             <div class="prindex.html pretty p-default p-round p-toggle">
@@ -142,13 +75,9 @@
                       </div>
                     </div>
                   </div> <!-- Single box end -->
-                  {% endfor %}
-
-                  {% else %}
-                  <div>
-                    No active api
-                  </div>
                   {% endif %}
+
+                  {% endfor %}
                 </article>
 
                 <div class="search-box">
@@ -166,13 +95,13 @@
                 <article class="dropBox inactive-row">
                   
                   <!-- Single box -->
-                  {% for api_list in api_lists %}
+                  {% for all_api in all_apis %}
                   <div class="dragBox inactive-box">
                     <div class="api__box">
                       <div class="api__box__shadow">
                         <div class="api__box__inner">
                           <div class="api__box__heading">
-                            <h5>{{ api_list.title }}</h5>
+                            <h5>{{ all_api.title }}</h5>
                             <!-- toggle -->
                             <div class="pretty p-switch p-fill">
                               <input type="checkbox" />
@@ -182,15 +111,15 @@
                             </div>
                           </div>
                           <div class="api__box__text">
-                            <small>{{ api_list.description }}</small>
+                            <small>{{ all_api.description }}</small>
                           </div>
                           <div class="api__box__stats">
                             <p>Stats <br>
-                              <span>4/hr</span>
+                              <span>{{ all_api.stats }}</span>
                             </p>
                           </div>
                           <div class="api__box__buttons">
-                            <a href="{% url 'addapi' %}"><button class="secondary-btn">+ Add API</button></a>
+                            <a href="{% url 'dashboard:adding_api' all_api.id %}"><button class="secondary-btn">+ Add API</button></a>
                             <!-- <input type="radio" name="" id=""> -->
                             <!-- success -->
                             <div class="prindex.html pretty p-default p-round p-toggle">
@@ -217,13 +146,25 @@
           </div>
         </div>
     </div>
+<script type="text/javascript">
+$('.add_api').click(function() {
+var id;
+id = $(this).attr("add_to_active");
+$.ajax(
+  {
+    type = 'POST',
+    url = 'active_api',
+    data: {
+      all_api_id : id
+    },
+    success: function(data) {
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>  -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script> 
-<script src="{% static 'js/dashboard_sidebar.js' %}"></script>
-<script src="{% static 'js/dashboard.js' %}"></script>
-</body>
-</html>
+    }
+  }
+)
+})
+
+
+</script>
+
+{% endblock %}

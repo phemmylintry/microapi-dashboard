@@ -58,8 +58,9 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
-# db.sqlite3
+db.sqlite3
 db.sqlite3-journal
+*.sqlite3
 
 # Flask stuff:
 instance/
@@ -131,3 +132,13 @@ microapi/
 staticfiles/
 .vscode/
 .idea/
+
+# static files folder
+
+staticfiles/
+
+# Virtual ENV
+penv
+
+
+.gitignore

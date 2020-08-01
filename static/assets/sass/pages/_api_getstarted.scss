@@ -1,0 +1,57 @@
+#get-started {
+  $border-color: #c6c6c6;
+  $font-color: #646464;
+  $sample-bg: #0b0a08ce;
+  $hover-bg: #4e4e4e;
+  $orange: #ff4500;
+  $black: #000000;
+  margin: 0;
+  padding: 0;
+
+  .getstarted {}
+
+  .code {
+    min-height: 12rem;
+
+    img {
+      width: 90%;
+      height: 90%;
+      margin: auto;
+    }
+  }
+
+  article.frameworks {
+    background: $border-color;
+
+    img {
+      width: 70%;
+      height: 70%;
+      margin: auto;
+    }
+  }
+
+  #features {
+    .feature {
+      border: solid 1px $font-color;
+      padding: 2rem;
+      margin: 1rem 0;
+
+      a {
+        background: $border-color;
+        color: $black;
+      }
+    }
+  }
+
+  #trial {
+    .subform {
+      input {
+        width: 70%;
+        height: 2.5rem;
+        margin-right: 2%;
+      }
+
+      button {}
+    }
+  }
+}
